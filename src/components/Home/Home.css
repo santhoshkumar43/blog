@@ -1,3 +1,85 @@
-.deletePost button{
-    font-size: 30px;
+.deletePost>button {
+    font-size: 20px;
 }
+
+.homePage {
+
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.deletePost {
+    float: right;
+    
+
+
+}
+.deletePost button{
+    cursor: pointer;
+    border :0px ;
+    padding: 3px;
+    background-color: #c0dbff00;
+}
+.deletePost button img {
+    height: 25px;
+    width: 30px;
+    box-shadow: 0px 5px 15px rgb(183, 183, 183);
+    
+
+   
+    
+    font-weight: bold;
+    border-radius: 3px;
+    
+}
+
+.title {
+    font-size: 15px;
+}
+
+.postTextContainer {
+    font-size: 18px;
+
+}
+
+.postHeader {
+    padding: 20px;
+    background-color: #cee4fa;
+}
+
+.post {
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 60%;
+
+    background-color: #c0dbff;
+    box-shadow: 0px 5px 15px rgb(183, 183, 183);
+
+}
+
+.image-cont {
+
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-cont img {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    width: 300px;
+}
+
+.post>h3 {
+    font-size: 15px;
+}
+
+.like {}
