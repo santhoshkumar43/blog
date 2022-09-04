@@ -1,8 +1,11 @@
 .App{
-background-color: rgb(255, 255, 255);
+background-color: #F4DACD;
   
 }
-
+.logo{
+  display: flex;
+  flex-direction: row;
+}
 nav{
   display: flex;
   justify-content: space-between;
@@ -12,6 +15,8 @@ nav img{
   height: 50px;
 }
 nav h1{
+  margin: 0px 10px;
+  text-align: center;
   font-size: 40px;
 }
 .item{

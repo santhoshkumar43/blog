@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
+import Texteditor from "../texteditor/Texteditor";
 
 import "../CreatePost/CreatePost.css";
 
@@ -36,6 +37,7 @@ function CreatePost({ isAuth }) {
   
     return (
       <div className="createPostPage">
+        
         <h1>Create A Post</h1>
         
 

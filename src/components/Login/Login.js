@@ -2,6 +2,8 @@ import React from "react";
 import { auth, provider } from "../../firebase.js";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import "../Login/Login.css"
+import google from "../../image/google.png"
 
 function Login({ setIsAuth }) {
   let navigate = useNavigate();
@@ -15,11 +17,15 @@ function Login({ setIsAuth }) {
   };
 
   return (
-    <div className="loginPage">
-      <p>Sign In With Google to Continue</p>
-      <button className="login-with-google-btn" onClick={signInWithGoogle}>
-        Sign in with Google
-      </button>
+    <div className="Login">
+
+
+      <div className="loginPage">
+        <h1>Login Here</h1>
+        <button className="login-with-google-btn" onClick={signInWithGoogle}><span><img src={google}/></span>
+          <p>Sign in with Google</p>
+        </button>
+      </div>
     </div>
   );
 }

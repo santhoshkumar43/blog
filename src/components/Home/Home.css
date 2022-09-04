@@ -37,7 +37,8 @@
 }
 
 .title {
-    font-size: 15px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
 }
 
 .postTextContainer {
@@ -47,7 +48,7 @@
 
 .postHeader {
     padding: 20px;
-    background-color: #cee4fa;
+    background-color: #ffffff;
 }
 
 .post {
@@ -58,7 +59,7 @@
     margin-top: 50px;
     width: 60%;
 
-    background-color: #c0dbff;
+    background-color: #ffffff;
     box-shadow: 0px 5px 15px rgb(183, 183, 183);
 
 }
