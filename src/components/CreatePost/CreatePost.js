@@ -23,6 +23,7 @@ function CreatePost({ isAuth }) {
       name: auth.currentUser.displayName,
       user_id: auth.currentUser.uid,
       imagelink,
+      likecount:[],
       
     });
     navigate("/");

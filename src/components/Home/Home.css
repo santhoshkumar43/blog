@@ -1,7 +1,12 @@
 .deletePost>button {
     font-size: 20px;
 }
+.top-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
+}
 .homePage {
 
     margin-top: 20px;
@@ -9,8 +14,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 }
-
 .deletePost {
     float: right;
     
@@ -21,24 +26,28 @@
     cursor: pointer;
     border :0px ;
     padding: 3px;
-    background-color: #c0dbff00;
+    background-color: transparent;
 }
 .deletePost button img {
-    height: 25px;
+    height: 30px;
     width: 30px;
-    box-shadow: 0px 5px 15px rgb(183, 183, 183);
+    
     
 
    
     
     font-weight: bold;
     border-radius: 3px;
+    margin: 10px 20px;
     
 }
 
-.title {
+.title h1{
     color: rgb(0, 0, 0);
-    font-size: 20px;
+    font-size: 30px;
+    margin: 10px 20px;
+
+    
 }
 
 .postTextContainer {
@@ -82,5 +91,25 @@
 .post>h3 {
     font-size: 15px;
 }
-
-.like {}
+.lower{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.liked button{
+    border: 0px;
+    background-color: transparent;
+    
+}
+.liked p{
+    text-align: center;
+}
+.liked img{
+    height: 30px;
+    
+}
+.liked img:hover{
+    cursor: pointer;
+    transform: scale(1.4);
+   
+}
