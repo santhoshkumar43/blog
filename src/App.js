@@ -34,7 +34,7 @@ function App() {
           <Route path="/CreatePost" element={<CreatePost isAuth={isAuth} />} />
           <Route path="/Login" element={<Login setIsAuth={setIsAuth} />} />
           <Route path="/Texteditor" element={<Texteditor  />} />
-          <Route path="/Default" element={<Default isAuth={isAuth}/>}/>
+          <Route path="/Default/:Default" element={<Default isAuth={isAuth}/>}/>
         </Routes>
       </Router>
 

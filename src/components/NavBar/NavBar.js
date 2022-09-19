@@ -37,6 +37,7 @@ function NavBar({isAuth, setIsAuth}) {
                             <a className="item" onClick={signUserOut}> Log Out</a>
                             <a className="item">contact us</a>
                             <a className="item item-id">{localStorage.getItem("name")}</a>
+                            <img className="item " src={localStorage.getItem("photoURL")}/>
                             
                         </>
                     )}

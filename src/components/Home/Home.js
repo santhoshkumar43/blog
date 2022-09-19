@@ -85,7 +85,7 @@ function Home({ isAuth }) {
 
                             <div className="post" key={index}>
 
-                                <Link to="/Default" className="h-con" state={{ likecount: post.likecount.length, from: post.title, title: post.title, name: post.name, user_id: post.user_id, imglnk: post.imagelink, id: post.id, text: post.postText }}   ><SmallContainer isAuth={isAuth} title={post.title} user_id={post.user_id} imglnk={post.imagelink} name={post.name} id={post.id} photoURL={post.photoURL} /></Link>
+                                <Link to={"Default/" + post.id} className="h-con" ><SmallContainer isAuth={isAuth} title={post.title} user_id={post.user_id} imglnk={post.imagelink} name={post.name} id={post.id} photoURL={post.photoURL} /></Link>
 
                             </div>
                         );

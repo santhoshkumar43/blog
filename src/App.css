@@ -11,6 +11,7 @@ nav{
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
+  align-items: center;
 }
 nav img{
   height: 50px;
@@ -29,7 +30,7 @@ nav h1{
   font-weight: 600;
 }
 .item:hover{
-  color: blue;
+  color: rgb(34, 34, 50);
 }
 
 

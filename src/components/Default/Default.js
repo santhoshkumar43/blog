@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { getDocs, collection, deleteDoc, doc, addDoc, updateDoc, increment, arrayUnion, arrayRemove, getDoc } from "firebase/firestore";
 import liked from "../../image/thumb-up.png";
 import unliked from "../../image/thumb-down.png";
@@ -8,17 +8,33 @@ import { auth, db } from "../../firebase";
 import delet from "../../image/delete.png";
 import "../Default/Default.css"
 function Default({ isAuth, stat }) {
-
-    const location = useLocation();
-    const { title } = location.state;
-    const { name } = location.state;
-    const { id } = location.state;
-    const { text } = location.state;
-
-    const { imglnk } = location.state;
-
     const [Data, setdata] = useState("");
     const [comment, setcomment] = useState("");
+    const [title, settitle]= useState("");
+    const [name , setname]= useState("");
+    const [text, settext]= useState("");
+    const [imglnk, setimglnk]= useState("");
+    
+
+    const pid = useParams();
+    const id = pid.Default;
+    console.log(id);
+    const docRef = doc(db, "posts", id);
+    const cmt = async (id) => {
+        const docSnap = await getDoc(docRef);
+        setdata(docSnap.data().likecount)
+        setname(docSnap.data().name);
+        setimglnk(docSnap.data().imagelink);
+        settitle(docSnap.data().title);
+        settext(docSnap.data().postText);
+        console.log(text)
+
+    }
+    console.log(title)
+    useEffect(() => {
+        cmt();
+        
+    }, []);
 
 
 
@@ -49,17 +65,7 @@ function Default({ isAuth, stat }) {
 
 
     }
-    const docRef = doc(db, "posts", id);
-    const cmt = async (id) => {
-        const docSnap = await getDoc(docRef);
-        setdata(docSnap.data().likecount)
-        console.log(docSnap.data().title);
-
-    }
-    useEffect(() => {
-        cmt();
-        console.log("default")
-    }, [0]);
+    
     const commented = async (id) => {
         const postDoc = doc(db, "posts", id);
         if (isAuth) {
@@ -98,7 +104,7 @@ function Default({ isAuth, stat }) {
                 <div className="Header">
 
                     <div className="image">{
-                        imglnk == 0 ? <p>no image</p> : <img src={imglnk} />
+                        imglnk == 0 ?<img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png" />: <img src={imglnk} />
 
                     }
 
