@@ -29,7 +29,7 @@ function NavBar({isAuth, setIsAuth}) {
                         <Link className="item" to="/Login"> Login </Link>
                     ) : (
                         <>
-                            <Link className="item" to="/CreatePost"> Create Post </Link>
+                            <Link className="item" to="/createPost"> Create Post </Link>
                             
                             
 
