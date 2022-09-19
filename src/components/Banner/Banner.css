@@ -1,0 +1,46 @@
+.main-banner {
+    background-image: linear-gradient(83.2deg, rgba(150, 93, 233, 1) 10.8%, rgba(99, 88, 238, 1) 94.3%);
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+.main-banner h1{
+    font-size: 40px;
+    margin-top: 0px;
+}
+.main-banner h2{
+    color:#6151bc;
+}
+
+.main-banner input{
+    height: 40px;
+    width: 500px;
+    border-radius: 3px;
+    border: 0px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 20px #6b639f;
+}
+.main-banner button{
+    cursor: pointer;
+    font-size: 20px;
+    height: 40px;
+    padding: 5px;
+    width: 120px;
+    background-color: #ff5403;
+    box-shadow: 0px 5px 20px #6b639f;
+    border: 0px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

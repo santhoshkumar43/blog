@@ -1,0 +1,21 @@
+.postContainer{
+    
+}
+.top-section{
+    
+}
+.postHeader{
+    
+    border-radius: 8px;
+
+}
+.lower{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.lower img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}

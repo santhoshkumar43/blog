@@ -22,8 +22,11 @@ function CreatePost({ isAuth }) {
       postText,
       name: auth.currentUser.displayName,
       user_id: auth.currentUser.uid,
+      photoURL: auth.currentUser.photoURL,
+
       imagelink,
       likecount:[],
+      Comment: []
       
     });
     navigate("/");

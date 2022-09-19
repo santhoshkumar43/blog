@@ -1,0 +1,19 @@
+.Default{
+    display: flex;
+    justify-content: center;
+}
+.in-Default{
+    padding: 50px;
+    background-color: white;
+    color: black;
+    width: 90%;
+    border-radius: 10px;
+}
+.title-d{
+    color: #7868e6;
+}
+.image{
+    display: flex;
+    justify-content: center;
+
+}

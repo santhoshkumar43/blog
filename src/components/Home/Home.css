@@ -1,19 +1,33 @@
 .deletePost>button {
     font-size: 20px;
+    
+}
+.main-home{
+    display: flex;
+    flex-direction: column;
+    
+    
 }
 .top-section{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
 }
 .homePage {
 
     margin-top: 20px;
-    display: flex;
-    flex-direction: column;
+    
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 100%;
+    
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    
+}
+.h-con{
+    text-decoration: none;
     
 }
 .deletePost {
@@ -43,8 +57,8 @@
 }
 
 .title h1{
-    color: rgb(0, 0, 0);
-    font-size: 30px;
+    color: white;
+    font-size: 17px;
     margin: 10px 20px;
 
     
@@ -52,40 +66,40 @@
 
 .postTextContainer {
     font-size: 18px;
+    
 
 }
 
-.postHeader {
-    padding: 20px;
-    background-color: #ffffff;
-}
+
 
 .post {
+    color:#6151bc;
     padding: 20px;
+    width: 320px;
+    height: 450px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    width: 60%;
-
-    background-color: #ffffff;
-    box-shadow: 0px 5px 15px rgb(183, 183, 183);
+    background-color: #c7befd;
+    box-shadow: 0px 5px 30px #c7befd;
 
 }
 
 .image-cont {
 
     display: flex;
-    margin-bottom: 20px;
     align-items: center;
     justify-content: center;
+    
 }
 
 .image-cont img {
     display: flex;
     flex-direction: row;
     height: 300px;
-    width: 300px;
+    width: 95%;
+    border-radius: 5px;
 }
 
 .post>h3 {
@@ -112,4 +126,22 @@
     cursor: pointer;
     transform: scale(1.4);
    
+}
+@media screen and (max-width:1600px) {
+    .homePage{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    
+}
+@media screen and (max-width:1200px) {
+    .homePage{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    .post{
+        width: 300px;
+        height: 400px;
+    }
+    
 }

@@ -1,8 +1,7 @@
 .App{
-  
-background-color: #F4DACD;
+background-color: white;
 
-  
+color: black;
 }
 .logo{
   display: flex;
@@ -22,11 +21,12 @@ nav h1{
   font-size: 40px;
 }
 .item{
-  color: gray;
+  color: #6151bc;
   margin-left: 30px;
   text-decoration: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 600;
 }
 .item:hover{
   color: blue;

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { auth, provider } from "../../firebase.js";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "../Login/Login.css"
-import google from "../../image/google.png"
+import google from "../../image/google.png";
+
+
+
 
 function Login({ setIsAuth }) {
   let navigate = useNavigate();
@@ -11,10 +14,12 @@ function Login({ setIsAuth }) {
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {
       localStorage.setItem("isAuth", true);
+      localStorage.setItem("name",auth.currentUser.displayName)
       setIsAuth(true);
       navigate("/");
     });
   };
+  console.log(localStorage.getItem("name"))
 
   return (
     <div className="Login">

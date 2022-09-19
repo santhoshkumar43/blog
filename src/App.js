@@ -9,8 +9,11 @@ import { auth } from './firebase';
 import { signOut } from "firebase/auth";
 import blog from "../src/image/blog.png"
 import Texteditor from "./components/texteditor/Texteditor.js";
+import NavBar from "./components/NavBar/NavBar";
+import Default from "./components/Default/Default";
 
 function App() {
+  
 
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
@@ -18,39 +21,20 @@ function App() {
     signOut(auth).then(() => {
       localStorage.clear();
       setIsAuth(false);
-      window.location.pathname = "/Login";
+      window.location.pathname = "/";
     });
   };
   return (
     <div className="App">
       <Router>
-
-        <nav>
-          <div className="logo"><img src={blog} /><div><h1>Let's Blog</h1></div></div>
-          
-          <div className="nav-items">
-            <Link className="item" to="/">Home</Link>
-            {!isAuth ? (
-              <Link className="item" to="/Login"> Login </Link>
-            ) : (
-              <>
-                <Link className="item" to="/CreatePost"> Create Post </Link>
-                
-                <a className="item" onClick={signUserOut}> Log Out</a>
-                <a className="item">contact us</a>
-              </>
-            )}
-          </div>
-
-
-        </nav>
-
+        <NavBar isAuth={isAuth} setIsAuth={setIsAuth}  />
 
         <Routes>
-          <Route path="/" element={<Home isAuth={isAuth} />} />
+          <Route path="/" element={<Home isAuth={isAuth}  />} />
           <Route path="/CreatePost" element={<CreatePost isAuth={isAuth} />} />
           <Route path="/Login" element={<Login setIsAuth={setIsAuth} />} />
-          <Route path="/Techeditor" element={<Texteditor />}/>
+          <Route path="/Texteditor" element={<Texteditor  />} />
+          <Route path="/Default" element={<Default isAuth={isAuth}/>}/>
         </Routes>
       </Router>
 

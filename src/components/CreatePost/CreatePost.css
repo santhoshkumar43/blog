@@ -21,7 +21,8 @@
     width: 70%;
 }
 .inputGp input{
-    border: 0px;
+    border: 1px solid #6151bc;
+    
     
     
     border-radius: 10px;
@@ -32,7 +33,7 @@
     height: 50PX;
 }
 .inputGp textarea{
-    border: 0px;
+    border: 1px solid #6151bc;;
     
     border-radius: 10px;
     font-size: 20px;
@@ -55,11 +56,13 @@
     border: 0px;
 }
 .inputAp{
+    
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
 .inputAp input{
+    border: 1px solid #6151bc;
   
     box-shadow: 0px 5px 15px rgb(183, 183, 183);
     border: 0px;
