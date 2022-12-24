@@ -10,7 +10,6 @@ import unliked from "../../image/thumb-down.png";
 import TextDecoder from "../texteditor/Texteditor.js";
 import SmallContainer from "../SmallContainer/SmallContainer.js";
 import { Link } from "react-router-dom";
-import Default from "../Default/Default";
 import Banner from "../Banner/Banner";
 
 function Home({ isAuth }) {
@@ -30,19 +29,13 @@ function Home({ isAuth }) {
     };
     useEffect(() => {
         getPosts();
-        
+
         console.log("helllo")
     }, [0]);
-
-
-
-
     const [value, setvalue] = useState('');
     const onChange = (event) => {
         setvalue(event.target.value);
     }
-
-
     const onSearch = (searchTerm) => {
 
         if (value.length == searchTerm.length) {
@@ -53,26 +46,21 @@ function Home({ isAuth }) {
 
     return (
         <div className="main-home">
-            
+
             <div>
-                <Banner onChange = {onChange} onSearch= {onSearch} value={value}/>
+                <Banner onChange={onChange} onSearch={onSearch} value={value} />
             </div>
-
-
-
             <div className="homePage">
-
-
-
-
-
                 {postLists
                     .filter(post => {
                         const a = value.toLowerCase();
                         const c = post.postText.toLowerCase();
                         const b = post.title.toLowerCase();
+                        const d = b.sort;
+
                         if (value == 0) {
-                            return (post.title)
+
+                            return (b)
 
                         } else {
                             return (b.includes(a) || c.includes(a))
@@ -85,7 +73,7 @@ function Home({ isAuth }) {
 
                             <div className="post" key={index}>
 
-                                <Link to={"Default/" + post.id} className="h-con" ><SmallContainer isAuth={isAuth} title={post.title} user_id={post.user_id} imglnk={post.imagelink} name={post.name} id={post.id} photoURL={post.photoURL} /></Link>
+                                <Link to={"Default/" + post.id} className="h-con" ><SmallContainer isAuth={isAuth} title={post.title} user_id={post.user_id} imglnk={post.imagelink} name={post.name} id={post.id} photoURL={post.photoURL} likecount={post.likecount.length} commet={post.comment} /></Link>
 
                             </div>
                         );

@@ -7,18 +7,19 @@ import "../SmallContainer/SmallContainer.css";
 import { auth, db } from "../../firebase";
 import delet from "../../image/delete.png";
 import "../Default/Default.css"
-function Default({ isAuth, stat }) {
+function Default({ isAuth }) {
     const [Data, setdata] = useState("");
     const [comment, setcomment] = useState("");
-    const [title, settitle]= useState("");
-    const [name , setname]= useState("");
-    const [text, settext]= useState("");
-    const [imglnk, setimglnk]= useState("");
-    
+    const [cmts, setcmts] = useState([""]);
+    const [title, settitle] = useState("");
+    const [name, setname] = useState("");
+    const [text, settext] = useState("");
+    const [imglnk, setimglnk] = useState("");
+
 
     const pid = useParams();
     const id = pid.Default;
-    console.log(id);
+
     const docRef = doc(db, "posts", id);
     const cmt = async (id) => {
         const docSnap = await getDoc(docRef);
@@ -27,14 +28,17 @@ function Default({ isAuth, stat }) {
         setimglnk(docSnap.data().imagelink);
         settitle(docSnap.data().title);
         settext(docSnap.data().postText);
-        console.log(text)
+        setcmts(docSnap.data().comment)
+
 
     }
-    console.log(title)
+
+
     useEffect(() => {
         cmt();
-        
+
     }, []);
+
 
 
 
@@ -65,7 +69,7 @@ function Default({ isAuth, stat }) {
 
 
     }
-    
+
     const commented = async (id) => {
         const postDoc = doc(db, "posts", id);
         if (isAuth) {
@@ -104,16 +108,18 @@ function Default({ isAuth, stat }) {
                 <div className="Header">
 
                     <div className="image">{
-                        imglnk == 0 ?<img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png" />: <img src={imglnk} />
+                        imglnk == 0 ? <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png" /> : <img src={imglnk} />
 
                     }
 
                     </div>
 
 
-                    <div className="postTextContainer"> {text} </div>
-                    <div className="lower">
-                        <h3 >@{name}</h3>
+                    <div className="postTextContainer"><div dangerouslySetInnerHTML={{ __html: text.substring() + "...." }}>
+
+                    </div></div>
+                    <div className="lower-def">
+                        <h3 >Author: @{name}</h3>
                         <div className="commented">
 
 
@@ -127,17 +133,39 @@ function Default({ isAuth, stat }) {
                             </button>
                             <p>{Data.length}</p>
                         </div>
-                        <div >
-                            <input
-                                placeholder="Comment..."
-                                onChange={(event) => {
-                                    setcomment(event.target.value);
-                                }}
-                                value={comment}
-                            />
-                            <button onClick={() => { commented(id) }}> Submit Post</button>
 
-                        </div>
+
+                    </div>
+                    <div className="cmt-def">
+                        <input
+                            placeholder="Comment..."
+                            onChange={(event) => {
+                                setcomment(event.target.value);
+                            }}
+                            value={comment}
+                        />
+                        <button onClick={() => { commented(id) }}> Comment</button>
+
+                    </div>
+                    <div className="all-cmt-def">
+                        <h3>Comments: </h3>
+                        {cmts.length == 0 ? <div>no comments</div> : cmts
+
+
+                            .map((post, index) => {
+                                return (
+
+                                    <div className="comments">
+                                        <p>{post.text}</p>
+                                        <b>{post.user_id}</b>
+
+
+
+                                    </div>
+                                );
+                            })}
+
+
 
                     </div>
                 </div>

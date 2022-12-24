@@ -63,3 +63,25 @@ nav h1{
     transform: rotate(360deg);
   }
 }
+@media screen and (max-width:700px) {
+  .item{
+    
+    margin-left: 0px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+  }
+    
+  nav img{
+    
+    height: 20px;
+  }
+  nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px;
+    align-items: center;
+  }
+    
+}

@@ -15,5 +15,45 @@
 .image{
     display: flex;
     justify-content: center;
+    margin: 30px 10px;
+    height: 500px;
 
+}
+.lower-def{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.cmt-def{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+.cmt-def input{
+    width: 85%;
+    height: 30px;
+    border: 2px solid #ff6f00;
+    border-radius: 5px;
+    
+}
+.cmt-def button{
+    background: linear-gradient(to right, #ff6f00, #ff9100);
+    width: 10%;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    
+}
+.comments{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.comments {
+    
 }

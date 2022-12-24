@@ -11,11 +11,26 @@
 }
 .lower{
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: left;
+    
 }
 .lower img{
     border-radius: 50%;
-    width: 40px;
+    width: 30px;
     height: 40px;
+    margin: 10px;
+}
+.title{
+   
+}
+.lower h3{
+    margin: 0px;
+}
+.lower p {
+    font-size: 13px;
+    margin: 0px;
+    font-weight: bold;
+    padding: 5px;
 }

@@ -11,6 +11,7 @@ import blog from "../src/image/blog.png"
 import Texteditor from "./components/texteditor/Texteditor.js";
 import NavBar from "./components/NavBar/NavBar";
 import Default from "./components/Default/Default";
+import MyAccount from "./components/MyAccount/MyAccount";
 
 function App() {
   
@@ -35,6 +36,7 @@ function App() {
           <Route path="/Login" element={<Login setIsAuth={setIsAuth} />} />
           <Route path="/Texteditor" element={<Texteditor  />} />
           <Route path="/Default/:Default" element={<Default isAuth={isAuth}/>}/>
+          <Route path="/MyAccount" element={<MyAccount isAuth={isAuth}/>}/>
         </Routes>
       </Router>
 

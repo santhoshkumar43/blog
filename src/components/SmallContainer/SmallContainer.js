@@ -1,26 +1,36 @@
 import React from "react";
 import { getDocs, collection, deleteDoc, doc, addDoc, updateDoc, increment, arrayUnion, arrayRemove } from "firebase/firestore";
-
+import liked from "../../image/thumb-up.png";
 import "../SmallContainer/SmallContainer.css";
+import chat from "../../image/chat.png"
 import { auth, db } from "../../firebase";
 import delet from "../../image/delete.png";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Default from "../Default/Default";
 
 
-function SmallContainer({ title, name, user_id, imglnk, id, isAuth, photoURL }) {
 
-    /*const deletePost = async (id) => {
+
+function SmallContainer({ myAc, title, name, user_id, imglnk, id, isAuth, photoURL, likecount }) {
+
+
+
+    const deletePost = async (id) => {
         const postDoc = doc(db, "posts", id);
 
         await deleteDoc(postDoc);
-        func();
-
-
-    };*/
+    };
+    useEffect(() => {
+        deletePost();
+    }, [0]);
+    
     return (
         <div className="postContainer">
             <div className="top-section">
 
-                {/*<div className="deletePost">
+                {myAc == "1" &&( <div className="deletePost">
                     {isAuth && user_id === auth.currentUser.uid && (
                         <button
                             onClick={() => {
@@ -30,12 +40,13 @@ function SmallContainer({ title, name, user_id, imglnk, id, isAuth, photoURL }) 
                             <span><img src={delet} /></span>
                         </button>
                     )}
-                        </div>*/}
+                </div>)}
             </div>
+            
             <div className="postHeader">
 
                 <div className="image-cont">{
-                    imglnk == 0 ?  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png" />: <img src={imglnk} />
+                    imglnk == 0 ? <img src="https://btibangalore.org/wp-content/uploads/2020/08/placeholder-300x202-1.jpg" /> : <img src={imglnk} />
 
                 }
 
@@ -46,12 +57,22 @@ function SmallContainer({ title, name, user_id, imglnk, id, isAuth, photoURL }) 
 
             </div>
             <div className="lower">
-                <img src={photoURL} />
+
                 <h3 >{name}</h3>
 
 
 
             </div>
+            <div className="lower">
+                <div>
+                    <img src={liked} />
+                    <p>{likecount}</p>
+                </div>
+
+
+
+            </div>
+            
 
 
 
