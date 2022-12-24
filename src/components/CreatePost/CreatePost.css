@@ -45,7 +45,7 @@
 
 .jodit-container:not(.jodit_inline) .jodit-wysiwyg {
     
-    position:static;
+    position:absolute;
     height: 500px;
 }
 
