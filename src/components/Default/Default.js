@@ -100,19 +100,19 @@ function Default({ isAuth }) {
 
                 <div className="top-section">
                     <div className="title-d">
-                        <h1 > {title}  </h1>
+                        <h4 > {title}  </h4>
 
                     </div>
 
                 </div>
                 <div className="Header">
 
-                    <div className="image">{
+                    {/* <div className="image">{
                         imglnk == 0 ? <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png" /> : <img src={imglnk} />
 
                     }
 
-                    </div>
+                    </div> */}
 
 
                     <div className="postTextContainer"><div dangerouslySetInnerHTML={{ __html: text.substring() + "...." }}>
