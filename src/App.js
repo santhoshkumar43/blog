@@ -12,6 +12,7 @@ import Texteditor from "./components/texteditor/Texteditor.js";
 import NavBar from "./components/NavBar/NavBar";
 import Default from "./components/Default/Default";
 import MyAccount from "./components/MyAccount/MyAccount";
+import Test from "./components/Test.js";
 
 function App() {
   
@@ -37,6 +38,7 @@ function App() {
           <Route path="/Texteditor" element={<Texteditor  />} />
           <Route path="/Default/:Default" element={<Default isAuth={isAuth}/>}/>
           <Route path="/MyAccount" element={<MyAccount isAuth={isAuth}/>}/>
+          <Route path="/test" element={<Test/>}/>
         </Routes>
       </Router>
 
