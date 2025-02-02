@@ -53,25 +53,15 @@ function SmallContainer({ myAc, title, name, user_id, imglnk, id, isAuth, photoU
                 </div>
             </div>
             <div className="title">
-                <h1 > {title}  </h1>
+                <p > {title}  </p>
 
             </div>
-            <div className="lower">
+            {/* <div className="lower">
 
-                <h3 >{name}</h3>
-
-
-
-            </div>
-            <div className="lower">
-                <div>
-                    <img src={liked} />
-                    <p>{likecount}</p>
-                </div>
-
-
-
-            </div>
+                <h4 >{name}</h4>
+                <p>Likes: {likecount}</p>
+            </div> */}
+           
             
 
 

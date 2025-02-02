@@ -1,76 +1,79 @@
-
-.createPostPage{
-    
+.createPostPage {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-   
     padding: 10px;
 }
-.createPostPage h1{
+
+.createPostPage h1 {
     font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
     color: #ff6f00;
-
-
+    margin-bottom: 20px; /* Added for spacing */
 }
-.jodit-wysiwyg{
-    height: 300px;
-}
-.cpContainer{
+
+.cpContainer {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    
     width: 90%;
+    max-width: 800px; /* Added for better responsiveness */
 }
-.inputT input{
+
+.inputT input {
     border: 1px solid #ff6f00;
     border-radius: 3px;
     padding: 5px;
     font-size: 20px;
-    /* box-shadow: 0px 5px 15px rgb(221, 221, 221); */
     width: 95%;
-    height: 25PX;
+    height: 35px; /* Slightly increased for better usability */
+    margin-bottom: 10px; /* Added for spacing */
 }
-.inputP{
+
+.inputP {
     height: 600px;
-    
+    margin-bottom: 20px; /* Added for spacing */
 }
-.jodit-react-container{
+
+.jodit-react-container {
     border: 1px solid #ff6f00;
     border-radius: 3px;
 }
 
 .jodit-container:not(.jodit_inline) .jodit-wysiwyg {
-    
-    position:relative;
+    position: relative;
     height: 500px;
 }
 
-
-.sub-btn{
+.sub-btn {
     border-radius: 7px;
-    width: 10%;
+    width: 120px; /* Changed from percentage to fixed width for consistency */
     background: linear-gradient(to right, #ff6f00, #ff9100);
     color: white;
     font-weight: bold;
     font-size: 17px;
-    border: 0px;
-    box-shadow: 0px 5px 15px rgb(183, 183, 183);
-    border: 0px;
+    border: 0;
+    box-shadow: 0px 5px 15px rgba(183, 183, 183, 0.5); /* Added transparency */
+    cursor: pointer; /* Added for better UX */
+    transition: background 0.3s ease; /* Added for hover effect */
 }
-.inputAp{
-    
-    margin-top: 10px;
+
+.sub-btn:hover {
+    background: linear-gradient(to right, #ff9100, #ff6f00); /* Hover effect */
+}
+
+.inputAp {
+    margin-top: 20px; /* Increased for better spacing */
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Align items vertically */
 }
-.inputAp input{
+
+.inputAp input {
     border: 1px solid #ff6f00;
     border-radius: 3px;
-    height: 30px;
-    width: 50%;
-
+    height: 35px; /* Slightly increased for better usability */
+    width: 70%; /* Adjusted for better proportion */
+    padding: 5px; /* Added for better input padding */
+    font-size: 16px; /* Adjusted for consistency */
 }
