@@ -2,14 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    
 }
 
 .createPostPage h1 {
     font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
     color: #ff6f00;
-    margin-bottom: 20px; /* Added for spacing */
+    margin-bottom: 20px; 
 }
 
 .cpContainer {
@@ -17,36 +17,21 @@
     flex-direction: column;
     padding: 10px;
     width: 90%;
-    max-width: 800px; /* Added for better responsiveness */
+    
 }
 
 .inputT input {
-    border: 1px solid #ff6f00;
     border-radius: 3px;
     padding: 5px;
     font-size: 20px;
-    width: 95%;
+    width: 70%;
     height: 35px; /* Slightly increased for better usability */
     margin-bottom: 10px; /* Added for spacing */
 }
 
-.inputP {
-    height: 600px;
-    margin-bottom: 20px; /* Added for spacing */
-}
-
-.jodit-react-container {
-    border: 1px solid #ff6f00;
-    border-radius: 3px;
-}
-
-.jodit-container:not(.jodit_inline) .jodit-wysiwyg {
-    position: relative;
-    height: 500px;
-}
-
 .sub-btn {
     border-radius: 7px;
+    height: 50px;
     width: 120px; /* Changed from percentage to fixed width for consistency */
     background: linear-gradient(to right, #ff6f00, #ff9100);
     color: white;
@@ -55,7 +40,8 @@
     border: 0;
     box-shadow: 0px 5px 15px rgba(183, 183, 183, 0.5); /* Added transparency */
     cursor: pointer; /* Added for better UX */
-    transition: background 0.3s ease; /* Added for hover effect */
+    transition: 0.3s; /* Added for hover effect */
+    margin-top: 10px;
 }
 
 .sub-btn:hover {
@@ -63,7 +49,7 @@
 }
 
 .inputAp {
-    margin-top: 20px; /* Increased for better spacing */
+   /* Increased for better spacing */
     display: flex;
     justify-content: space-between;
     align-items: center; /* Align items vertically */

@@ -1,58 +1,49 @@
-import React, { useRef, useState } from "react";
-import JoditEditor from "jodit-react";
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// Optional: Custom styles
 
 const Test = () => {
-  const editor = useRef(null);
-  const [content, setContent] = useState("");
+  const showSuccessToast = (text) => {
+    toast.success(text, {
+      position: "top-right",
+      autoClose: 3000, // Close after 3 seconds
+    });
+  };
 
-  // Jodit configuration
-  const config = {
-    readonly: false, // Make the editor editable
-    toolbar: true, // Show the toolbar
-    buttons: [
-      "bold",
-      "italic",
-      "underline",
-      "strikethrough",
-      "|",
-      "fontsize",
-      "font",
-      "|",
-      "align",
-      "ul",
-      "ol",
-      "|",
-      "link",
-      "image",
-      "|",
-      "undo",
-      "redo",
-    ],
-    height: 500, // Set editor height
+  const showErrorToast = () => {
+    toast.error("Error! Something went wrong.", {
+      position: "top-right",
+      autoClose: 5000, // Close after 5 seconds
+    });
+  };
+
+  const showWarningToast = () => {
+    toast.warning("Warning! Please check your input.", {
+      position: "top-right",
+      autoClose: 4000, // Close after 4 seconds
+    });
+  };
+
+  const showInfoToast = () => {
+    toast.info("Info: This is a helpful message.", {
+      position: "top-right",
+      autoClose: 3000, // Close after 3 seconds
+    });
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Word-Like Text Editor</h1>
-      <div style={{ border: "1px solid #ccc", borderRadius: "4px" }}>
-        <JoditEditor
-          ref={editor}
-          value={content}
-          config={config}
-          onBlur={(newContent) => setContent(newContent)}
-        />
+    <div className="App">
+      <h1>React Toast Messages</h1>
+      <div className="buttons">
+        <button onClick={showSuccessToast}>Show Success Toast</button>
+        <button onClick={showErrorToast}>Show Error Toast</button>
+        <button onClick={showWarningToast}>Show Warning Toast</button>
+        <button onClick={showInfoToast}>Show Info Toast</button>
       </div>
-      <div style={{ marginTop: "20px" }}>
-        <h2>Preview:</h2>
-        <div
-          style={{
-            border: "1px solid #ccc",
-            padding: "10px",
-            borderRadius: "4px",
-          }}
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-      </div>
+
+      {/* Toast Container */}
+      <ToastContainer />
     </div>
   );
 };
