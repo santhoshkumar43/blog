@@ -13,14 +13,9 @@ import { Link } from "react-router-dom";
 import Banner from "../Banner/Banner";
 
 function Home({ isAuth }) {
-
+ 
     const [postLists, setPostList] = useState([]);
     const postsCollectionRef = collection(db, "posts");
-
-
-
-
-
     const getPosts = async () => {
         const data = await getDocs(postsCollectionRef);
         setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -48,13 +43,12 @@ function Home({ isAuth }) {
         <div className="main-home">
 
             <div>
-                <Banner onChange={onChange} onSearch={onSearch} value={value} />
+                <Banner onSearch={onSearch} postsList={postLists} />
             </div>
             <div className="homePage">
                 {postLists
                     .filter(post => {
                         const a = value.toLowerCase();
-                        const c = post.postText.toLowerCase();
                         const b = post.title.toLowerCase();
                         const d = b.sort;
 
@@ -63,7 +57,7 @@ function Home({ isAuth }) {
                             return (b)
 
                         } else {
-                            return (b.includes(a) || c.includes(a))
+                            return (b == a)
                         }
 
 

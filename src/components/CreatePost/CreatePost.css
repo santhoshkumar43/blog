@@ -3,63 +3,81 @@
     flex-direction: column;
     align-items: center;
     
-}
-
-.createPostPage h1 {
+  }
+  
+  .createPostPage h1 {
     font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Arial", sans-serif;
     color: #ff6f00;
-    margin-bottom: 20px; 
-}
-
-.cpContainer {
+    margin-bottom: 20px;
+    
+  }
+  
+  .cpContainer {
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    width: 90%;
+    width: 80%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     
-}
-
-.inputT input {
-    border-radius: 3px;
-    padding: 5px;
-    font-size: 20px;
-    width: 70%;
-    height: 35px; /* Slightly increased for better usability */
-    margin-bottom: 10px; /* Added for spacing */
-}
-
-.sub-btn {
-    border-radius: 7px;
-    height: 50px;
-    width: 120px; /* Changed from percentage to fixed width for consistency */
-    background: linear-gradient(to right, #ff6f00, #ff9100);
-    color: white;
-    font-weight: bold;
-    font-size: 17px;
-    border: 0;
-    box-shadow: 0px 5px 15px rgba(183, 183, 183, 0.5); /* Added transparency */
-    cursor: pointer; /* Added for better UX */
-    transition: 0.3s; /* Added for hover effect */
-    margin-top: 10px;
-}
-
-.sub-btn:hover {
-    background: linear-gradient(to right, #ff9100, #ff6f00); /* Hover effect */
-}
-
-.inputAp {
-   /* Increased for better spacing */
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Align items vertically */
-}
-
-.inputAp input {
+  }
+  
+  .cpContainer h3 {
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .cpContainer input {
+    width: auto;
+    padding: 12px;
+    font-size: 16px;
     border: 1px solid #ff6f00;
-    border-radius: 3px;
-    height: 35px; /* Slightly increased for better usability */
-    width: 70%; /* Adjusted for better proportion */
-    padding: 5px; /* Added for better input padding */
-    font-size: 16px; /* Adjusted for consistency */
-}
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  input:focus {
+    border-color: #ff9100;
+    box-shadow: 0px 0px 5px rgba(255, 111, 0, 0.5);
+  }
+  
+  .error-text {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .sub-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #ff6f00, #ff9100);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 15px;
+  }
+  
+  .sub-btn:hover {
+    background: linear-gradient(to right, #ff9100, #ff6f00);
+    transform: scale(1.03);
+    box-shadow: 0px 5px 15px rgba(255, 111, 0, 0.3);
+  }
+  
+  .poweredByAI {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    padding: 8px;
+    border-radius: 5px;
+    background: rgba(255, 111, 0, 0.1);
+    display: inline-block;
+  }
+  

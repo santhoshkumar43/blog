@@ -8,10 +8,13 @@ import { useRef } from "react";
 import "../CreatePost/CreatePost.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import Rewrite from "../ReWrite/Rewrite";
 function CreatePost({ isAuth }) {
+  if(isAuth != true){
+    navigate("/Login")
+  }
   const editor = useRef(null);
-  const [content, setcontent] = useState("");
+  
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [imagelink, setimagelink] = useState("");
@@ -69,27 +72,29 @@ function CreatePost({ isAuth }) {
     }
     
     // If validation passes, proceed to create the post
-    await addDoc(postsCollectionRef, {
-      title,
-      postText,
-      name: auth.currentUser.displayName,
-      user_id: auth.currentUser.uid,
-      photoURL: auth.currentUser.photoURL,
-      imagelink,
-      likecount: [],
-      comment: [],
-    });
-    showSuccessToast();
-    navigate("/");
+    else{
+      await addDoc(postsCollectionRef, {
+        title,
+        postText,
+        name: auth.currentUser.displayName,
+        user_id: auth.currentUser.uid,
+        photoURL: auth.currentUser.photoURL,
+        imagelink,
+        likecount: [],
+        comment: [],
+      });
+      showSuccessToast();
+      navigate("/");
+    }
   };
 
   const handleTitleChange = (event) => {
     const value = event.target.value;
-    if (value.length <= 50) {
+    if (value.length <= 100) {
       setTitle(value);
       setTitleError(""); // Clear error if input is valid
     } else {
-      setTitleError("Title cannot exceed 50 characters."); // Set error message
+      setTitleError("Title cannot exceed 100 characters."); // Set error message
     }
   };
 
@@ -101,7 +106,7 @@ function CreatePost({ isAuth }) {
         <div>
           <h3>Title of the blog :</h3>
         </div>
-        <div className="inputT">
+     
           <input
             // Corrected attribute name (maxLength instead of maxlength)
             placeholder="Title..."
@@ -112,9 +117,8 @@ function CreatePost({ isAuth }) {
           {titleError && (
             <p style={{ color: "red", fontSize: "0.875rem" }}>{titleError}</p> // Display error message
           )}
-        </div>
-        <div>        <h3>Write the blog here:</h3>
-</div>
+       
+        <div>        <h3>Write the blog here:</h3></div>
         <div className="inputP">
           <JoditEditor
             ref={editor}
@@ -125,20 +129,22 @@ function CreatePost({ isAuth }) {
             }
           />
         </div>
+        <Rewrite content={postText} setPostText={setPostText}/>
         <h3>Thumbnail Link:</h3>
-        <div className="inputAp">
+        
           
           <input
             placeholder="Image Link..."
             onChange={(event) => {
               setimagelink(event.target.value);
             }}
-          />
-
-        </div>
+        />
         <button className="sub-btn" onClick={createPost}>
           Submit Post
         </button>
+        <div className="poweredByAI">
+          <p>🚀 Powered by AI</p>
+        </div>
 
       </div>
       <ToastContainer />
