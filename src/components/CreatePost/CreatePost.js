@@ -10,9 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Rewrite from "../ReWrite/Rewrite";
 function CreatePost({ isAuth }) {
-  if(isAuth != true){
-    navigate("/Login")
-  }
+
   const editor = useRef(null);
   
   const [title, setTitle] = useState("");
